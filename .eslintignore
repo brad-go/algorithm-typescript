@@ -6,3 +6,5 @@ lib
 coverage
 # don't lint readme
 README.md
+# don't lint js files
+*.js
