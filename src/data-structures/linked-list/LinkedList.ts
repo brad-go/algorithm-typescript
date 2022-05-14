@@ -84,6 +84,7 @@ class LinkedList<T> {
     return this.head.value;
   }
 
+  // 맨 뒤의 값 가져오기
   peekLast(): T | null {
     if (!this.tail) return null;
 
