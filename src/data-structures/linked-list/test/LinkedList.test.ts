@@ -126,7 +126,7 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('should find node by means of custom comapre function', () => {
+    describe('should find node by means of custom comapare function', () => {
       interface Custom {
         value: number;
         customValue: string;
