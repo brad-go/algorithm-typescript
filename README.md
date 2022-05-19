@@ -13,6 +13,7 @@
 자료 구조는 데이터를 효율적으로 접근하고 수정할 수 있도록 컴퓨터에 데이터를 구성하고 저장하는 특정한 방법을 의미합니다. 더 정확하게 말하면 자료구조는 데이터 값, 데이터 간의 관계, 데이터에 적용할 수 있는 기능이나 작업의 집합입니다.
 
 - [Linked List](./src/data-structures/linked-list/)
+- [Doubly Linked List](./src/data-structures/doubly-linked-list/)
 
 ## Algorithms
 
