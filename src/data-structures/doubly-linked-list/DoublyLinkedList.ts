@@ -109,6 +109,8 @@ class DoublyLinkedList<T> {
     let current = this.head;
 
     while (!equalsFunc(current.value, value)) {
+      if (!current.next) return -1;
+
       current = current.next!;
       idx++;
     }
