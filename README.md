@@ -16,6 +16,7 @@
 - [Doubly Linked List](./src/data-structures/doubly-linked-list/)
 - [Stack](./src/data-structures/stack/)
 - [Queue](./src/data-structures/queue/)
+- [Deque](./src/data-structures/deque/)
 
 ## Algorithms
 
