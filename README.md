@@ -14,6 +14,7 @@
 
 - [Linked List](./src/data-structures/linked-list/)
 - [Doubly Linked List](./src/data-structures/doubly-linked-list/)
+- [Stack](./src/data-structures/stack/)
 
 ## Algorithms
 
