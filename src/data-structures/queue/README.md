@@ -47,11 +47,11 @@
 
 ### 삽입 - O(1)
 
-- `enqueue(value)`: 큐의 맨 위에 요소 추가
+- `enqueue(value)`: 큐의 맨 뒤에 요소 추가
 
 ### 탐색 - O(n)
 
-- `contains(value)`: value에 해당하는 값을 큐이 가지고 있는지 아닌지 boolean값 반환
+- `contains(value)`: value에 해당하는 값을 큐가 가지고 있는지 아닌지 boolean값 반환
 
 ### 접근 - O(1)
 
@@ -60,7 +60,7 @@
 
 ### 삭제 - O(1)
 
-- `dequeue()`: 큐의 맨 위의 요소 제거
+- `dequeue()`: 큐의 맨 앞의 요소 제거
 - `clear()`: 큐 초기화
 
 ### 부가 기능
