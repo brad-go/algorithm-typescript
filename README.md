@@ -17,6 +17,7 @@
 - [Stack](./src/data-structures/stack/)
 - [Queue](./src/data-structures/queue/)
 - [Deque](./src/data-structures/deque/)
+- [Hash Table](./src/data-structures/hash-table/)
 
 ## Algorithms
 
