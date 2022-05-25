@@ -120,10 +120,7 @@ class DoublyLinkedList<T> {
 
   // 리스트에 특정 값이 존재하는지 boolean 값을 반환 - O(n)
   contains(value: T, equalsFunction?: utils.EqualsFunction<T>): boolean {
-    const idx = this.indexOf(
-      value,
-      equalsFunction ? equalsFunction : undefined,
-    );
+    const idx = this.indexOf(value, equalsFunction && equalsFunction);
 
     return idx !== -1;
   }
