@@ -1,1 +1,6 @@
-export { EqualsFunction, defaultEquals } from './compare';
+export {
+  EqualsFunction,
+  defaultEquals,
+  CompareFunction,
+  defaultCompare,
+} from './compare';
