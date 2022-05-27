@@ -18,6 +18,7 @@
 - [Queue](./src/data-structures/queue/)
 - [Deque](./src/data-structures/deque/)
 - [Hash Table](./src/data-structures/hash-table/)
+- [Heap](./src/data-structures/heap/)
 
 ## Algorithms
 
@@ -46,7 +47,7 @@ yarn test
 #### 항목별로 테스트 실행
 
 ```bash
-yarn test -- 'LinkedList'
+yarn test 'LinkedList'
 ```
 
 ## 기여 방법
