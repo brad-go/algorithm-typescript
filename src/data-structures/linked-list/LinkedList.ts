@@ -1,10 +1,15 @@
 import LinkedListNode from './LinkedListNode';
-import * as utils from '../../utils';
+import Comparator, { CompareFunction } from '../../utils';
 
 class LinkedList<T> {
   private head: LinkedListNode<T> | undefined;
   private tail: LinkedListNode<T> | undefined;
   private length = 0;
+
+  private compare: Comparator<T>;
+  constructor(comparatorFunction?: CompareFunction<T>) {
+    this.compare = new Comparator(comparatorFunction);
+  }
 
   // 리스트의 길이 반환 - O(1)
   size(): number {
@@ -92,15 +97,13 @@ class LinkedList<T> {
   }
 
   // 리스트에 존재하는 특정 값의 인덱스 번호를 반환
-  indexOf(value: T, equalsFunction?: utils.EqualsFunction<T>): number {
+  indexOf(value: T): number {
     if (!this.head) return -1;
-
-    const equalsFunc = equalsFunction || utils.defaultEquals;
 
     let idx = 0;
     let current = this.head;
 
-    while (!equalsFunc(current.value, value)) {
+    while (!this.compare.equal(current.value, value)) {
       if (!current.next) return -1;
 
       current = current.next!;
@@ -111,8 +114,8 @@ class LinkedList<T> {
   }
 
   // 리스트에 특정 값이 존재하는지 boolean 값을 반환
-  contains(value: T, equalsFunction?: utils.EqualsFunction<T>): boolean {
-    const idx = this.indexOf(value, equalsFunction && equalsFunction);
+  contains(value: T): boolean {
+    const idx = this.indexOf(value);
 
     return idx !== -1;
   }
