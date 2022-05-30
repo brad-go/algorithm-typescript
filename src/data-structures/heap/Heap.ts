@@ -1,16 +1,13 @@
-import * as utils from '../../utils';
+import Comparator, { CompareFunction } from '../../utils';
 
 abstract class Heap<T> {
   // 요소들을 담기 위한 동적인 배열
   private _heap: T[];
-  private _compare: utils.CompareFunction<T>;
+  private _compare: Comparator<T>;
 
-  constructor(
-    elements?: Iterable<T>,
-    compareFunction?: utils.CompareFunction<T>,
-  ) {
+  constructor(elements?: Iterable<T>, compareFunction?: CompareFunction<T>) {
     this._heap = [];
-    this._compare = compareFunction || utils.defaultCompare;
+    this._compare = new Comparator(compareFunction);
 
     // 사용자가 요소들을 제공한다면, 추가하는 노드들의 힙을 만족하도록 각 노드들의 위치를 조정
     if (elements) {
@@ -71,8 +68,8 @@ abstract class Heap<T> {
 
   // 요소가 존재하면 삭제한다. - O(n)
   remove(element: T): this {
-    const elementIndex = this._heap.findIndex(
-      (h: T) => this._compare(element, h) === 0,
+    const elementIndex = this._heap.findIndex((h: T) =>
+      this._compare.equal(element, h),
     );
 
     if (elementIndex === -1) throw new Error('No element in heap');
