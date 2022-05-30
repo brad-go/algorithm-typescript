@@ -126,16 +126,21 @@ describe('LinkedList', () => {
       });
     });
 
-    describe('should find node by means of custom comapare function', () => {
+    it('should find node by means of custom comapare function', () => {
       interface Custom {
         value: number;
         customValue: string;
       }
-      const linkedList2: LinkedList<Custom> = new LinkedList();
 
-      const comparatorFunction = (a: Custom, b: Custom): boolean => {
-        return a.customValue === b.customValue;
+      const comparatorFunction = (a: Custom, b: Custom): number => {
+        if (a.customValue === b.customValue) return 0;
+
+        return a.customValue < b.customValue ? -1 : 1;
       };
+
+      const linkedList2: LinkedList<Custom> = new LinkedList(
+        comparatorFunction,
+      );
 
       const a = { value: 1, customValue: 'test1' };
       const b = { value: 2, customValue: 'test2' };
@@ -145,7 +150,8 @@ describe('LinkedList', () => {
       linkedList2.add(b);
       linkedList2.add(c);
 
-      expect(linkedList2.contains(a, comparatorFunction)).toBeTruthy();
+      expect(linkedList2.contains(a)).toBeTruthy();
+      expect(linkedList2.indexOf(b)).toBe(1);
     });
   });
 
