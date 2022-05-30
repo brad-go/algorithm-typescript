@@ -151,11 +151,15 @@ describe('DoublyLinkedList', () => {
         customValue: string;
       }
 
-      const linkedList2: DoublyLinkedList<Custom> = new DoublyLinkedList();
+      const comparatorFunction = (a: Custom, b: Custom): number => {
+        if (a.customValue === b.customValue) return 0;
 
-      const comparatorFunction = (a: Custom, b: Custom): boolean => {
-        return a.customValue === b.customValue;
+        return a.customValue < b.customValue ? -1 : 1;
       };
+
+      const linkedList2: DoublyLinkedList<Custom> = new DoublyLinkedList(
+        comparatorFunction,
+      );
 
       const a = { value: 1, customValue: 'test1' };
       const b = { value: 2, customValue: 'test2' };
@@ -165,7 +169,7 @@ describe('DoublyLinkedList', () => {
       linkedList2.add(b);
       linkedList2.add(c);
 
-      expect(linkedList2.contains(a, comparatorFunction)).toBeTruthy();
+      expect(linkedList2.contains(a)).toBeTruthy();
     });
   });
 
