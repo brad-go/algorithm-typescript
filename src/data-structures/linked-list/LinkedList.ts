@@ -1,5 +1,6 @@
 import LinkedListNode from './LinkedListNode';
 import Comparator, { CompareFunction } from '../../utils';
+import stack from '../stack';
 
 class LinkedList<T> {
   private head: LinkedListNode<T> | undefined;
@@ -144,7 +145,10 @@ class LinkedList<T> {
 
     if (this.head.next) {
       this.head = this.head.next;
-    } else this.head = undefined;
+    } else {
+      this.head = undefined;
+      this.tail = undefined;
+    }
 
     this.length--;
     return value;
@@ -155,22 +159,29 @@ class LinkedList<T> {
     if (!this.tail) return null;
 
     const value = this.tail.value;
-    let current = this.head!;
-    let i = 0;
 
-    while (i < this.length - 2) {
-      current = current.next!;
-      i++;
+    if (this.head === this.tail) {
+      this.head = undefined;
+      this.tail = undefined;
+      this.length--;
+
+      return value;
     }
 
-    current.next = null;
+    let current = this.head!;
+
+    while (current.next) {
+      if (!current.next.next) current.next = null;
+      else current = current.next;
+    }
+
     this.tail = current;
     this.length--;
 
     return value;
   }
 
-  // 특정 인덱스의 요소를 제거하거나 맨 뒤의 요소 제거
+  // 특정 인덱스의 요소를 제거하거나 맨 앞의 요소 제거
   remove(idx?: number): T | null {
     if (!idx) return this.removeFirst();
     if (idx < 0 || idx >= this.size() || !this.head) return null;
@@ -178,8 +189,8 @@ class LinkedList<T> {
 
     let deletedNode = null;
     let current = this.head;
-    let i = 0;
 
+    let i = 0;
     while (i < idx - 1) {
       current = current.next!;
       i++;
@@ -187,6 +198,7 @@ class LinkedList<T> {
 
     deletedNode = current.next!;
     current.next = current.next!.next;
+
     this.length--;
 
     return deletedNode.value;
