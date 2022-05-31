@@ -1,6 +1,5 @@
 import LinkedListNode from './LinkedListNode';
 import Comparator, { CompareFunction } from '../../utils';
-import stack from '../stack';
 
 class LinkedList<T> {
   private head: LinkedListNode<T> | undefined;
