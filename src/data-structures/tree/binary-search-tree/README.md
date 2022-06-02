@@ -32,6 +32,35 @@
 | -------- | -------- | -------- |
 | O(log n) | O(log n) | O(log n) |
 
+## 이진 탐색 트리 메서드 목록
+
+### 삽입 - O(log n)
+
+- `insert(value)`: 트리에 새로운 노드 삽입
+
+### 탐색 - O(log n)
+
+- `contains(value)`: value에 해당하는 값을 트리가 가지고 있는지 아닌지 boolean값 반환
+- `find(value)`: 해당 value를 가진 노드를 반환
+- `findMin(node)`: 기본적으로 최상위 노드에서부터 최소 노드를 반환하거나 지정된 루트안의 하위 트리 중 최소 노드 반환
+- `findMax(node)`: 기본적으로 최상위 노드에서부터 최대 노드를 반환하거나 지정된 루트안의 하위 트리 중 최대 노드를 반환
+- `findSuccessor(node)`: 트리에서 해당 노드의 sucessor(중위 순회 시 다음으로 오는 노드) 반환
+- `findePredecessor(node)`: 트리에서 해당 노드의 predecessor(중위 순회 시 이전에 오는 노드) 반환
+
+### 삭제 - O(log n)
+
+- `remove(value)`: 트리에서 value를 가진 노드 제거
+
+### 부가 기능
+
+- `size()`: 트리가 가진 요소의 개수 반환 - O(1)
+- `isEmpty()`: 트리가 비었는지 boolean값 반환 - O(1)
+- `height()`: 트리의 높이를 반환 - 트리 안에 있는 모든 노드를 재귀하기 때문에 O(n)
+- `toArray()`: 트리의 각 노드들의 값을 배열로 전환해서 반환 - O(n)
+- `inorderTraversal()`: 트리를 중위 순회(in order)하는 iterator 반환
+- `preorderTraversal()`: 트리를 전위 순회(pre order)하는 iterator 반환
+- `inorderTraversal()`: 트리를 후위 순회(post order)하는 iterator 반환
+
 ## 참고
 
 - [나무위키](<https://namu.wiki/w/%ED%8A%B8%EB%A6%AC(%EA%B7%B8%EB%9E%98%ED%94%84)>)
