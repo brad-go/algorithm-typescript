@@ -10,7 +10,7 @@
 
 ## 트리 관련 용어
 
-![트리 용어](https://w.namu.la/s/606aecc8b8a27d42129f3e13c6db9a871a4566cd88c123689585256281efb5dde5b35f4e516572f0e5f0e419f0ae2be3aedf7a9c8dbb1756d1bf635a48da67ec9ecb991900ad42c5ebddbf8da4672963d6d51d0a3574a86927a968eb72efb655f80e6b235749bdb8fb2027ba08d4d257)
+![트리 용어](https://images.velog.io/images/root1031/post/886cfefd-3378-467b-8153-4a0eeddaa086/image.png)
 
 - **노드(node)**: 트리를 구성하는 기본 원소
   - **루트 노드(root node / root)**: 트리에서 부모가 없는 최상위 노드, 트리의 시작점
@@ -44,7 +44,7 @@
 
 ## 이진 트리 (Binary Tree)
 
-![이진 트리](https://w.namu.la/s/80babca3318fe49e11009da782d4a7b3969bf17517764fe7dab69b05e0477ba3f057a995cd00c2434b4c964cd08ba76267c879cea21db822565ccd8a50252dae2936a95db64e839de89e575b3554cd6eaccc38f8c753ad0f1f8daddb9f4c8e74)
+![이진 트리](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/1920px-Binary_search_tree.svg.png)
 
 부모 노드 밑의 자식 노드 개수(=차수, degree)를 최대 2개로 제한하는, 트리의 가장 간단한 형태. 두 자식 노드를 보통 왼쪽 자식과 오른쪽 자식으로 구분지으며, 하나의 값과 오른쪽 자식 노드를 가리킬 두 개의 포인터를 가진 구조로 구현할 수 있습니다.
 
@@ -87,7 +87,7 @@
 - **후위 순회(Post-order traversal):** 왼쪽 자손, 오른쪽 자손, 자신 순서로 순회하는 방법
 - **레벨 순서 순회(Level-order traversal)**: 너비 우선 순회(Breadth-First traversal)라고도 하며, 노드를 레벨 순서로 방문하는 순회 방법입니다. 위 세가지는 [스택](../stack/)을 활용하여 구현할 수 있는 반면 레벨 순서 순회는 [큐](../queue/)를 활용해 구현할 수 있습니다.
 
-![트리 순회](https://w.namu.la/s/8e72dc2a70a4523d258bba6ff2edb2ef2b9240ed67133d1c5a2fd14de683af1d2a462f989102399598c1ca60d425651ea37c3acb14441e0b922b25e82ea9179ec669a3a1eb38abe7a8250596c85f1a7238fd1331bb2d5c1bd6428ed8ee22f380)
+![트리 순회](https://gseok.gitbooks.io/algorithm/content/assets/2-search-tree.png)
 
 위의 트리를 순회하면 다음과 같은 결과를 얻습니다.
 
