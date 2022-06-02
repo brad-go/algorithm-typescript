@@ -122,6 +122,32 @@ swim(startIndex?: number): void {
 }
 ```
 
+## 힙 메서드 목록
+
+### 삽입 - O(log n)
+
+- `add(element)`: 힙의 특성을 유지한 채로 힙에 요소를 추가
+
+### 접근 - O(1)
+
+- `peek()`: 힙의 최상위 요소를 가져온다.
+
+### 탐색 - O(n)
+
+- `contains(element)`: 힙이 요소를 가지고 있는지 아닌지 boolean값 반환
+
+### 삭제
+
+- `poll()`: 힙의 최상위 요소(루트 노드)를 제거하고 반환 - O(log n)
+- `remove(element)`: 힙에 요소가 존재하면 삭제한다. 요소를 찾기 위해 탐색하기 때문에 O(n)
+- `clear()`: 모든 노드 제거 - O(1)
+
+### 부가 기능
+
+- `size()`: 힙이 가지고 있는 요소의 개수 반환
+- `isEmpty()`: 힙이 비었는지 boolean값 반환
+- `toString()`: 힙의 요소들을 문자열로 반환
+
 ## 참고
 
 - [emplam27님 블로그](https://velog.io/@emplam27/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EB%8A%94-%ED%9E%99Heap)
