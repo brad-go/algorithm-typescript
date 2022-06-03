@@ -1,3 +1,4 @@
+import Comparator from '../../../utils';
 import MinHeap from '../MinHeap';
 
 describe('MinHeap', () => {
@@ -83,10 +84,11 @@ describe('MinHeap', () => {
 
     expect(heap.toString()).toBe('3,11,10,12,11');
 
-    expect(heap.remove(3).toString()).toBe('10,11,11,12');
-    expect(heap.remove(11).peek()).toBe(10);
-    expect(heap.remove(11).toString()).toBe('10,12');
-    expect(heap.remove(12).peek()).toBe(10);
+    heap.remove(3);
+    expect(heap.toString()).toBe('10,11,11,12');
+
+    heap.remove(11);
+    expect(heap.toString()).toBe('10,12,11');
   });
 
   it('should be possible to remove items from heap with heapify up', () => {
@@ -102,16 +104,26 @@ describe('MinHeap', () => {
     heap.add(1);
 
     expect(heap.toString()).toBe('1,2,4,6,3,5,6,10,8,7');
-    expect(heap.remove(8).toString()).toBe('1,2,4,6,3,5,6,10,7');
-    expect(heap.remove(7).toString()).toBe('1,2,4,6,3,5,6,10');
-    expect(heap.remove(1).toString()).toBe('2,3,4,6,10,5,6');
-    expect(heap.remove(2).toString()).toBe('3,6,4,6,10,5');
-    expect(heap.remove(6).toString()).toBe('3,5,4,6,10');
-    expect(heap.remove(10).toString()).toBe('3,5,4,6');
-    expect(heap.remove(5).toString()).toBe('3,6,4');
-    expect(heap.remove(6).toString()).toBe('3,4');
-    expect(heap.remove(3).toString()).toBe('4');
-    expect(heap.remove(4).toString()).toBe('');
+    heap.remove(8);
+    expect(heap.toString()).toBe('1,2,4,6,3,5,6,10,7');
+    heap.remove(7);
+    expect(heap.toString()).toBe('1,2,4,6,3,5,6,10');
+    heap.remove(1);
+    expect(heap.toString()).toBe('2,3,4,6,10,5,6');
+    heap.remove(2);
+    expect(heap.toString()).toBe('3,6,4,6,10,5');
+    heap.remove(6);
+    expect(heap.toString()).toBe('3,5,4,6,10');
+    heap.remove(10);
+    expect(heap.toString()).toBe('3,5,4,6');
+    heap.remove(5);
+    expect(heap.toString()).toBe('3,6,4');
+    heap.remove(6);
+    expect(heap.toString()).toBe('3,4');
+    heap.remove(3);
+    expect(heap.toString()).toBe('4');
+    heap.remove(4);
+    expect(heap.toString()).toBe('');
   });
 
   it('should throw error if there is no element to remove', () => {
@@ -156,5 +168,26 @@ describe('MinHeap', () => {
     expect(heap.poll()).toBe(9);
     expect(heap.poll()).toBe(10);
     expect(heap.poll()).toBe(20);
+  });
+
+  it('should be possible to remove items from with custom finding comparator', () => {
+    const minHeap = new MinHeap<string>();
+
+    minHeap.add('a');
+    minHeap.add('bb');
+    minHeap.add('ccc');
+    minHeap.add('dddd');
+
+    expect(minHeap.toString()).toBe('a,bb,ccc,dddd');
+
+    const comparator = new Comparator((a: string, b: string): number => {
+      if (a.length === b.length) return 0;
+
+      return a.length < b.length ? -1 : 1;
+    });
+
+    minHeap.compare = comparator;
+    minHeap.remove('hey');
+    expect(minHeap.toString()).toBe('a,bb,dddd');
   });
 });
