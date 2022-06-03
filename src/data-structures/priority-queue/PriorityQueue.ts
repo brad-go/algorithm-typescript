@@ -28,32 +28,32 @@ class PriorityQueue<T> extends MinHeap<T> {
     return this;
   }
 
-  // 우선 순위가 가장 낮은 요소를 제거한다. - O(log n)
+  // 우선 순위가 가장 높은 요소를 꺼낸다. - O(log n)
   dequeue(): T | null {
-    const deletedNode = super.poll();
-    this.priorities.delete(deletedNode);
+    const topPriorityItem = super.poll();
+    this.priorities.delete(topPriorityItem);
 
-    return deletedNode;
+    return topPriorityItem;
   }
 
   // 우선 순위 큐에 요소가 있다면 제거한다. - O(n)
   remove(item: T, customFindingComparator?: Comparator<T>): T {
-    const removedElement = super.remove(item, customFindingComparator);
+    const removedItem = super.remove(item, customFindingComparator);
     this.priorities.delete(item);
 
-    return removedElement;
+    return removedItem;
   }
 
   // 우선 순위 큐에서 입력받은 요소와 같은 요소의 인덱스를 반환한다. - O(n)
   findIndex(value: T): number {
-    const elementIndex = this.heap.findIndex((el: T) =>
+    const itemIndex = this.heap.findIndex((el: T) =>
       this.compare.equal(el, value),
     );
 
-    return elementIndex;
+    return itemIndex;
   }
 
-  // 큐의 맨 앞 요소를 보여준다. - O(1)
+  // 큐의 맨 앞 요소를 가져온다. - O(1)
   peek(): T | null {
     return super.peek();
   }
