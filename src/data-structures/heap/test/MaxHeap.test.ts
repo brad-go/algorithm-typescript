@@ -1,4 +1,5 @@
 import MaxHeap from '../MaxHeap';
+import Comparator from '../../../utils';
 
 describe('MaxHeap', () => {
   let heap: MaxHeap<number>;
@@ -83,10 +84,17 @@ describe('MaxHeap', () => {
 
     expect(heap.toString()).toBe('12,11,10,3,11');
 
-    expect(heap.remove(12).toString()).toBe('11,11,10,3');
-    expect(heap.remove(11).peek()).toBe(11);
-    expect(heap.remove(11).toString()).toBe('10,3');
-    expect(heap.remove(10).peek()).toBe(3);
+    heap.remove(12);
+    expect(heap.toString()).toBe('11,11,10,3');
+
+    heap.remove(11);
+    expect(heap.toString()).toBe('11,3,10');
+
+    heap.remove(11);
+    expect(heap.toString()).toBe('10,3');
+
+    heap.remove(10);
+    expect(heap.toString()).toBe('3');
   });
 
   it('should be possible to remove items from heap with heapify up', () => {
@@ -102,16 +110,27 @@ describe('MaxHeap', () => {
     heap.add(1);
 
     expect(heap.toString()).toBe('10,8,6,7,6,4,5,3,2,1');
-    expect(heap.remove(4).toString()).toBe('10,8,6,7,6,1,5,3,2');
-    expect(heap.remove(3).toString()).toBe('10,8,6,7,6,1,5,2');
-    expect(heap.remove(5).toString()).toBe('10,8,6,7,6,1,2');
-    expect(heap.remove(10).toString()).toBe('8,7,6,2,6,1');
-    expect(heap.remove(6).toString()).toBe('8,7,1,2,6');
-    expect(heap.remove(2).toString()).toBe('8,7,1,6');
-    expect(heap.remove(1).toString()).toBe('8,7,6');
-    expect(heap.remove(6).toString()).toBe('8,7');
-    expect(heap.remove(7).toString()).toBe('8');
-    expect(heap.remove(8).toString()).toBe('');
+
+    heap.remove(4);
+    expect(heap.toString()).toBe('10,8,6,7,6,1,5,3,2');
+    heap.remove(3);
+    expect(heap.toString()).toBe('10,8,6,7,6,1,5,2');
+    heap.remove(5);
+    expect(heap.toString()).toBe('10,8,6,7,6,1,2');
+    heap.remove(10);
+    expect(heap.toString()).toBe('8,7,6,2,6,1');
+    heap.remove(6);
+    expect(heap.toString()).toBe('8,7,1,2,6');
+    heap.remove(2);
+    expect(heap.toString()).toBe('8,7,1,6');
+    heap.remove(1);
+    expect(heap.toString()).toBe('8,7,6');
+    heap.remove(6);
+    expect(heap.toString()).toBe('8,7');
+    heap.remove(7);
+    expect(heap.toString()).toBe('8');
+    heap.remove(8);
+    expect(heap.toString()).toBe('');
   });
 
   it('should throw error if there is no element to remove', () => {
@@ -155,5 +174,26 @@ describe('MaxHeap', () => {
     expect(heap.poll()).toBe(3);
     expect(heap.poll()).toBe(2);
     expect(heap.poll()).toBe(-5);
+  });
+
+  it('should be possible to remove items from with custom finding comparator', () => {
+    const maxHeap = new MaxHeap<string>();
+
+    maxHeap.add('a');
+    maxHeap.add('bb');
+    maxHeap.add('ccc');
+    maxHeap.add('dddd');
+
+    expect(maxHeap.toString()).toBe('dddd,ccc,bb,a');
+
+    const comparator = new Comparator((a: string, b: string): number => {
+      if (a.length === b.length) return 0;
+
+      return a.length < b.length ? -1 : 1;
+    });
+
+    maxHeap.compare = comparator;
+    maxHeap.remove('hey');
+    expect(maxHeap.toString()).toBe('dddd,a,bb');
   });
 });
