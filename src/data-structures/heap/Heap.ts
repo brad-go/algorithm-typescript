@@ -24,6 +24,10 @@ abstract class Heap<T> {
     return this._compare;
   }
 
+  set compare(comparator: Comparator<T>) {
+    this._compare = comparator;
+  }
+
   // 힙의 크기를 반환 - O(1)
   size(): number {
     return this._heap.length;
@@ -67,15 +71,15 @@ abstract class Heap<T> {
   }
 
   // 요소가 존재하면 삭제한다. - O(n)
-  remove(element: T): this {
+  remove(element: T, comparator: Comparator<T> = this.compare): T {
     const elementIndex = this._heap.findIndex((h: T) =>
-      this._compare.equal(element, h),
+      comparator.equal(element, h),
     );
 
     if (elementIndex === -1) throw new Error('No element in heap');
 
-    this.removeAt(elementIndex); // O(log n)
-    return this;
+    const deleted = this.removeAt(elementIndex); // O(log n)
+    return deleted;
   }
 
   // 힙 초기화 - O(1)
@@ -143,7 +147,8 @@ abstract class Heap<T> {
     // 입력받은 인덱스의 부모가 존재하고, 부모 인덱스보다 작을 때까지 부모 인덱스와 맞바꾸기
     while (
       this.hasParent(childIndex) &&
-      this.isCorrectOrder(childIndex, this.getParentIndex(childIndex))
+      // this.isCorrectOrder(childIndex, this.getParentIndex(childIndex))
+      !this.isCorrectOrder(this.getParentIndex(childIndex), childIndex)
     ) {
       this.swap(childIndex, this.getParentIndex(childIndex));
 
