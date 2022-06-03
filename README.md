@@ -19,6 +19,9 @@
 - [Deque](./src/data-structures/deque/)
 - [Hash Table](./src/data-structures/hash-table/)
 - [Heap](./src/data-structures/heap/)
+- [Priority Queue](./src/data-structures/priority-queue/)
+- [Tree](./src/data-structures/tree/)
+  - [Binary Search Tree](./src/data-structures/tree/binary-search-tree/)
 
 ## Algorithms
 
