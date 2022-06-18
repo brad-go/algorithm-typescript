@@ -27,6 +27,9 @@
 
 알고리즘은 문제를 해결하는 방법에 대한 일련의 절차나 방법을 공식화한 형태로 표현한 것입니다.
 
+- **정렬 (Sorting)**
+  - [버블 정렬(Bubble Sort)](./src/algorithms/sorting/bubble-sort/)
+
 ## 저장소 사용법
 
 #### 클론해서 로컬에 내려받기
