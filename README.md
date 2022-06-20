@@ -29,6 +29,9 @@
 
 - **정렬 (Sorting)**
   - [버블 정렬(Bubble Sort)](./src/algorithms/sorting/bubble-sort/)
+  - [선택 정렬(Selection Sort](./src/algorithms/sorting/selection-sort/)
+  - [삽입 정렬(Insertion Sort](./src/algorithms/sorting/insertion-sort/)
+  - [병합 정렬(Merge Sort](./src/algorithms/sorting/merge-sort/)
 
 ## 저장소 사용법
 
