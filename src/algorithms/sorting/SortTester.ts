@@ -36,7 +36,6 @@ class SortTester {
 
   static testSortWithCustomComparator(sortFunction: SortFunction<string>) {
     const customCompareFn = (a: string, b: string) => {
-      console.log(a.length, b.length);
       if (a.length === b.length) return 0;
 
       return a.length < b.length ? -1 : 1;
