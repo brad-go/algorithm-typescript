@@ -146,3 +146,8 @@ const merge = <T,>(leftList: LinkedList<T>, rightList: LinkedList<T>) => {
 
 - 제자리 정렬(in place sort)이 아니기 때문에 별도의 메모리 공간이 필요하다.
 - 정렬할 데이터의 양이 많은 경우에는 그만큼 이동 횟수가 많아지므로 시간적인 낭비도 많아지게 된다.
+
+## 참고
+
+- [나무 위키](https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98#s-2.2.3)
+- [신입 개발자 전공 지식 & 기술 면접 백과사전](https://gyoogle.dev/blog/algorithm/Bubble%20Sort.html)
