@@ -32,6 +32,7 @@
   - [선택 정렬(Selection Sort)](./src/algorithms/sorting/selection-sort/)
   - [삽입 정렬(Insertion Sort)](./src/algorithms/sorting/insertion-sort/)
   - [병합 정렬(Merge Sort)](./src/algorithms/sorting/merge-sort/)
+  - [힙 정렬(Heap Sort](./src/algorithms/sorting/heap-sort/)
 
 ## 저장소 사용법
 
