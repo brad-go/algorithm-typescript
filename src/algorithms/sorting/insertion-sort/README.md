@@ -43,7 +43,7 @@ const insertionSort = (array) => {
 
 | 이름               | 최선 |       평균       |       최악       | 메모리 | 안정 여부 |
 | ------------------ | :--: | :--------------: | :--------------: | :----: | :-------: |
-| **Selection sort** | O(N) | O(N<sup>2</sup>) | O(N<sup>2</sup>) |  O(N)  |    Yes    |
+| **Insertion sort** | O(N) | O(N<sup>2</sup>) | O(N<sup>2</sup>) |  O(N)  |    Yes    |
 
 ### 시간 복잡도
 

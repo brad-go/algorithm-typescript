@@ -121,6 +121,10 @@ const merge = <T,>(leftList: LinkedList<T>, rightList: LinkedList<T>) => {
 
 ## 복잡도
 
+| 이름           |   최선   |   평균   |   최악   | 메모리 | 안정 여부 |
+| -------------- | :------: | :------: | :------: | :----: | :-------: |
+| **Merge sort** | O(NlogN) | O(NlogN) | O(NlogN) |  O(N)  |    Yes    |
+
 ### 시간 복잡도
 
 - 배열을 log n 번 쪼개어 대소를 비교하기 때문에 `O(nlogn)`의 시간 복잡도를 가진다.
