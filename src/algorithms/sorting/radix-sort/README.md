@@ -79,7 +79,7 @@ const countingSortForRadix = (array, radixBase, digit) => {
 
 | 이름           | 최선  | 평균  | 최악  |  메모리  | 안정 여부 |
 | -------------- | :---: | :---: | :---: | :------: | :-------: |
-| **Quick sort** | O(NK) | O(NK) | O(NK) | O(N + K) |    Yes    |
+| **Radix sort** | O(NK) | O(NK) | O(NK) | O(N + K) |    Yes    |
 
 - K는 가장 긴 키의 길이를 뜻한다.
 
