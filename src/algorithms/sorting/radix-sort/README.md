@@ -104,3 +104,8 @@ const countingSortForRadix = (array, radixBase, digit) => {
 
 - 버킷이라는 추가적인 메모리 공간을 요구한다.
 - 자릿수가 존재하지 않는 데이터를 정렬할 수 없다.
+
+## 참고
+
+- [나무 위키](https://namu.wiki/w/%EC%A0%95%EB%A0%AC%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98#s-2.2.3)
+- [신입 개발자 전공 지식 & 기술 면접 백과사전](https://gyoogle.dev/blog/algorithm/Bubble%20Sort.html)
