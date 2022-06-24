@@ -27,15 +27,36 @@
 
 알고리즘은 문제를 해결하는 방법에 대한 일련의 절차나 방법을 공식화한 형태로 표현한 것입니다.
 
-- **정렬 (Sorting)**
-  - [버블 정렬(Bubble Sort)](./src/algorithms/sorting/bubble-sort/)
-  - [선택 정렬(Selection Sort)](./src/algorithms/sorting/selection-sort/)
-  - [삽입 정렬(Insertion Sort)](./src/algorithms/sorting/insertion-sort/)
-  - [병합 정렬(Merge Sort)](./src/algorithms/sorting/merge-sort/)
-  - [힙 정렬(Heap Sort)](./src/algorithms/sorting/heap-sort/)
-  - [퀵 정렬(Quick Sort)](./src/algorithms/sorting/quick-sort/)
-  - [기수 정렬(Radix Sort)](./src/algorithms/sorting/radix-sort/)
-  - [계수 정렬(Counting Sort)](/src/algorithms/sorting/counting-sort/)
+### 주제별 알고리즘
+
+#### [탐색(Searches)](./src/algorithms/search/)
+
+- [선형 탐색(Linear Search)](./src/algorithms/search/linear-search/)
+
+#### [정렬(Sorting)](./src/algorithms/sorting/)
+
+- [버블 정렬(Bubble Sort)](./src/algorithms/sorting/bubble-sort/)
+- [선택 정렬(Selection Sort)](./src/algorithms/sorting/selection-sort/)
+- [삽입 정렬(Insertion Sort)](./src/algorithms/sorting/insertion-sort/)
+- [병합 정렬(Merge Sort)](./src/algorithms/sorting/merge-sort/)
+- [힙 정렬(Heap Sort)](./src/algorithms/sorting/heap-sort/)
+- [퀵 정렬(Quick Sort)](./src/algorithms/sorting/quick-sort/)
+- [기수 정렬(Radix Sort)](./src/algorithms/sorting/radix-sort/)
+- [계수 정렬(Counting Sort)](./src/algorithms/sorting/counting-sort/)
+- [셸 정렬(Shell Sort)](./src/algorithms/sorting/shell-sort/)
+- [버킷 정렬(Bucket Sort)](./src/algorithms/sorting/bucket-sort/)
+
+### 패러다임별 알고리즘
+
+알고리즘 패러다임이란, 알고리즘이 주어진 문제를 해결하기 위해 채택한 전략이나 관점을 말합니다. 알고리즘을 해결하는 문제나 알고리즘의 동작 방식이 완전히 다르더라도, 알고리즘의 동작 원칙이 같다면 같은 패러다임을 사용했다고 말할 수 있습니다.
+
+#### [분할 정복(Devide and Conquer)](./src/algorithms/paradigm/DevideAndConquer.md)
+
+- [이진 탐색(Binary Search)](./src/algorithms/search/binary-search)
+- [병합 정렬(Merge Sort)](./src/algorithms/sorting/merge-sort/)
+- [퀵 정렬(Quick Sort)](./src/algorithms/sorting/quick-sort/)
+
+문제를 작은 문제로 나눠 풀이한 다음 그것들을 합쳐서 해결하는 방식
 
 ## 저장소 사용법
 
