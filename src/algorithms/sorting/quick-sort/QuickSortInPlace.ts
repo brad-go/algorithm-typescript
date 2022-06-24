@@ -17,7 +17,7 @@ const quickSort = <T>(
 };
 
 // prettier-ignore
-const partition = <T>(array: T[], left: number, right: number, compareFunction: CompareFunction<T>,) => {
+const partition = <T>(array: T[], left: number, right: number, compareFunction: CompareFunction<T>) => {
   const pivot = array[Math.floor((left + right) / 2)];
   const comparator = new Comparator(compareFunction);
 
