@@ -43,7 +43,7 @@ const insertionSort = (array) => {
 
 | 이름               | 최선 |       평균       |       최악       | 메모리 | 안정 여부 |
 | ------------------ | :--: | :--------------: | :--------------: | :----: | :-------: |
-| **Insertion sort** | O(N) | O(N<sup>2</sup>) | O(N<sup>2</sup>) |  O(N)  |    Yes    |
+| **Insertion sort** | O(N) | O(N<sup>2</sup>) | O(N<sup>2</sup>) |  O(1)  |    Yes    |
 
 ### 시간 복잡도
 
@@ -53,7 +53,7 @@ const insertionSort = (array) => {
 
 ### 공간 복잡도
 
-- 주어진 배열 안에서 교환(swap)을 통해, 정렬이 수행되므로 `O(n)`이다.
+- 주어진 배열 안에서 교환(swap)을 통해, 정렬이 수행되므로 `O(1)`이다.
 
 ## 장단점
 
