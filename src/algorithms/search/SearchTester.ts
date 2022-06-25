@@ -16,6 +16,7 @@ class SearchTester {
   static testSearchNumber(searchFunction: SearchFunction<number>) {
     const search: SearchFunction<number> = searchFunction;
 
+    expect(search([], 1)).toBe(-1);
     expect(search(numberArray, 1000)).toBe(-1);
     expect(search(numberArray, 1)).toBe(0);
     expect(search(numberArray, 14)).toBe(4);
