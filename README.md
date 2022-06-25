@@ -32,6 +32,10 @@
 #### [탐색(Searches)](./src/algorithms/search/)
 
 - [선형 탐색(Linear Search)](./src/algorithms/search/linear-search/)
+- [이진 탐색(Binary Search)](./src/algorithms/search/binary-search/)
+- [점프 탐색(Jump Search)](./src/algorithms/search/jump-search/)
+- [보간 탐색(Interpolation Search)](./src/algorithms/search/interpolation-search/)
+- [지수 탐색(Exponential Search)](./src/algorithms/search/exponential-search/)
 
 #### [정렬(Sorting)](./src/algorithms/sorting/)
 
