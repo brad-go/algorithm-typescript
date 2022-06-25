@@ -10,7 +10,7 @@ interface CustomObject {
 export const numberArray = [1, 5, 10, 12, 14, 17, 22, 100];
 export const floatArray = [2.7, 5, 8.1, 9, 30.234, 42, 121.94];
 export const charArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
-export const stringArray = ['eat', 'pizza', 'computer', 'nice', 'hello'];
+export const stringArray = ['computer', 'eat', 'hello', 'nice', 'pizza'];
 
 class SearchTester {
   static testSearchNumber(searchFunction: SearchFunction<number>) {
@@ -44,9 +44,9 @@ class SearchTester {
     const search: SearchFunction<string> = searchFunction;
 
     expect(search(stringArray, '')).toBe(-1);
-    expect(search(stringArray, 'eat')).toBe(0);
-    expect(search(stringArray, 'computer')).toBe(2);
-    expect(search(stringArray, 'hello')).toBe(4);
+    expect(search(stringArray, 'computer')).toBe(0);
+    expect(search(stringArray, 'hello')).toBe(2);
+    expect(search(stringArray, 'pizza')).toBe(4);
   }
 
   // prettier-ignore
