@@ -35,5 +35,5 @@ const linearSearch = (array, value) => {
 
 ## 참고
 
-[나무 위키](https://namu.wiki/w/%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89)
-[https://sustainable-dev.tistory.com/34](https://sustainable-dev.tistory.com/34)
+- [나무 위키](https://namu.wiki/w/%EC%9D%B4%EC%A7%84%20%ED%83%90%EC%83%89)
+- [https://sustainable-dev.tistory.com/34](https://sustainable-dev.tistory.com/34)
